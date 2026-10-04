@@ -4,6 +4,7 @@
 
 @layer base {
   html, body { overflow-x: clip; }
+  :root { color-scheme: dark; } /* stops phones from forcing their own dark mode */
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
@@ -15,7 +16,7 @@
   }
   h1, h2, h3 { @apply font-display text-white; }
   section[id] { scroll-margin-top: 72px; }
-  ::selection { background: rgba(34, 211, 238, 0.3); color: #fff; }
+  ::selection { background: rgba(168, 85, 247, 0.35); color: #fff; }
   :focus-visible {
     outline: 2px solid #A855F7;
     outline-offset: 3px;
