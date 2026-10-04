@@ -39,7 +39,7 @@ export default function CodeBackground() {
       y: randomY ? Math.random() * height : -20 - Math.random() * 200,
       speed: 10 + Math.random() * 22, // px per second
       size: 11 + Math.floor(Math.random() * 3),
-      alpha: 0.08 + Math.random() * 0.50,
+      alpha: 0.08 + Math.random() * 0.30,
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
     });
 
