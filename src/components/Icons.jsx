@@ -39,7 +39,7 @@ export function Icon({ name, className = 'h-5 w-5' }) {
 }
 
 export const accentClasses = {
-  primary: { text: 'text-accent-primary', bg: 'bg-accent-primary/10', ring: 'ring-accent-primary/30', glow: 'rgba(168,85,247,0.35)' },
-  secondary: { text: 'text-accent-secondary', bg: 'bg-accent-secondary/10', ring: 'ring-accent-secondary/30', glow: 'rgba(192,132,252,0.35)' },
-  tertiary: { text: 'text-accent-tertiary', bg: 'bg-accent-tertiary/10', ring: 'ring-accent-tertiary/30', glow: 'rgba(232,121,249,0.35)' },
+  primary: { text: 'text-accent-primary', bg: 'bg-accent-primary/10', ring: 'ring-accent-primary/30', glow: 'rgba(127,166,240,0.28)' },
+  secondary: { text: 'text-accent-secondary', bg: 'bg-accent-secondary/10', ring: 'ring-accent-secondary/30', glow: 'rgba(169,195,242,0.24)' },
+  tertiary: { text: 'text-accent-tertiary', bg: 'bg-accent-tertiary/10', ring: 'ring-accent-tertiary/30', glow: 'rgba(110,147,218,0.28)' },
 };

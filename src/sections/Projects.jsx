@@ -21,8 +21,8 @@ function Thumbnail({ project, className = '' }) {
   }
   const C = CATEGORY_ICON[project.category] ?? Sparkles;
   return (
-    <div className={`relative grid h-full w-full place-items-center overflow-hidden bg-gradient-to-br from-accent-primary/15 via-ink-800 to-accent-secondary/20 ${className}`}>
-      <pre aria-hidden="true" className="absolute inset-0 p-4 font-mono text-[10px] leading-4 text-accent-primary/20">
+    <div className={`relative grid h-full w-full place-items-center overflow-hidden bg-ink-800 ${className}`}>
+      <pre aria-hidden="true" className="absolute inset-0 p-4 font-mono text-[10px] leading-4 text-accent-primary/25">
         {SNIPPET[project.category] ?? SNIPPET.Other}
       </pre>
       <C className="relative h-12 w-12 text-white/80" aria-hidden="true" />
@@ -46,12 +46,12 @@ function CaseStudy({ project, onClose }) {
   const cs = project.caseStudy ?? {};
   return createPortal(
     <motion.div className="fixed inset-0 z-[60] flex items-end justify-center p-0 sm:items-center sm:p-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <div className="absolute inset-0 bg-ink-950/80 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-ink-950/90 backdrop-blur-sm" onClick={onClose} />
       <motion.div
         role="dialog"
         aria-modal="true"
         aria-labelledby="case-title"
-        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-t-3xl border border-white/10 bg-ink-900 sm:rounded-3xl"
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-t-3xl border border-ink-600 bg-ink-900 sm:rounded-3xl"
         initial={{ y: 60, opacity: 0, scale: 0.97 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         exit={{ y: 40, opacity: 0 }}
@@ -116,7 +116,7 @@ function CaseStudy({ project, onClose }) {
           {cs.screenshots?.length > 0 && (
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               {cs.screenshots.map((src, i) => (
-                <img key={src} src={src} alt={`${project.title} screenshot ${i + 1}`} loading="lazy" className="rounded-xl border border-white/10" />
+                <img key={src} src={src} alt={`${project.title} screenshot ${i + 1}`} loading="lazy" className="rounded-xl border border-ink-600" />
               ))}
             </div>
           )}
@@ -166,7 +166,7 @@ export default function Projects() {
               onClick={() => setFilter(f)}
               aria-pressed={filter === f}
               className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                filter === f ? 'text-ink-950' : 'text-slate-400 hover:text-white'
+                filter === f ? 'text-ink-950' : 'text-slate-300 hover:text-white'
               }`}
             >
               {filter === f && (
@@ -198,7 +198,7 @@ export default function Projects() {
                     <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">{p.summary}</p>
                     <ul className="mt-4 flex flex-wrap gap-1.5">
                       {p.tech.map((t) => (
-                        <li key={t} className="rounded-md bg-white/[0.05] px-2 py-0.5 font-mono text-[11px] text-slate-300">{t}</li>
+                        <li key={t} className="rounded-md border border-ink-700 bg-ink-800 px-2 py-0.5 font-mono text-[11px] text-slate-300">{t}</li>
                       ))}
                     </ul>
                     <div className="mt-5 flex flex-wrap items-center gap-2">
@@ -224,7 +224,7 @@ export default function Projects() {
         </motion.ul>
 
         {visible.length === 0 && (
-          <p className="rounded-2xl border border-dashed border-white/10 p-10 text-center text-slate-400">
+          <p className="rounded-2xl border border-dashed border-ink-600 p-10 text-center text-slate-400">
             No {filter} projects yet. Try another filter.
           </p>
         )}

@@ -19,12 +19,10 @@ export default function Clubs() {
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
               <article className="glass card-hover relative overflow-hidden rounded-3xl p-7 sm:p-9">
-                <div aria-hidden="true" className="absolute -left-16 -top-16 h-48 w-48 rounded-full bg-accent-primary/10 blur-3xl" />
-                <div aria-hidden="true" className="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-accent-secondary/10 blur-3xl" />
 
                 <div className="relative flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                   <div className="flex items-center gap-5">
-                    <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 text-accent-primary ring-1 ring-accent-primary/30">
+                    <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl border border-ink-600 bg-ink-800 text-accent-primary">
                       <Users className="h-8 w-8" aria-hidden="true" />
                     </span>
                     <div>
@@ -44,12 +42,12 @@ export default function Clubs() {
                   )}
                 </div>
 
-                <div className="relative mt-7 flex flex-wrap items-center gap-3 border-t border-white/[0.06] pt-6">
-                  <span className="chip border-accent-secondary/30 bg-accent-secondary/10 text-accent-secondary">
+                <div className="relative mt-7 flex flex-wrap items-center gap-3 border-t border-ink-700 pt-6">
+                  <span className="chip text-accent-secondary">
                     <Code2 className="h-3.5 w-3.5" aria-hidden="true" />
                     {club.team}
                   </span>
-                  <p className="text-sm text-slate-400">{club.description}</p>
+                  <p className="text-sm text-slate-300">{club.description}</p>
                 </div>
               </article>
             </motion.li>

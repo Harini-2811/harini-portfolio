@@ -27,7 +27,7 @@ export default function Certificates() {
                 <button
                   type="button"
                   onClick={() => setOpen(c)}
-                  className="relative aspect-[16/10] overflow-hidden bg-white/[0.03]"
+                  className="relative aspect-[16/10] overflow-hidden bg-ink-800"
                   aria-label={`View ${c.title} certificate`}
                 >
                   <img
@@ -37,8 +37,7 @@ export default function Certificates() {
                     decoding="async"
                     className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
-                  <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-ink-950/70 text-white opacity-0 ring-1 ring-white/10 transition group-hover:opacity-100">
+                  <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-ink-950/70 text-white opacity-0 ring-1 ring-ink-600 transition group-hover:opacity-100">
                     <Maximize2 className="h-4 w-4" />
                   </span>
                   <span className="absolute bottom-3 left-3 rounded-full bg-accent-primary px-2.5 py-1 text-xs font-semibold text-ink-950">

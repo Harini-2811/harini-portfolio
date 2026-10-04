@@ -16,7 +16,7 @@ const SNIPPETS = [
   '{ }',
   '</>',
 ];
-const COLORS = ['168,85,247', '192,132,252', '148,163,184'];
+const COLORS = ['127,166,240', '96,128,190', '148,163,184']; // steel blue, navy blue, slate
 
 /** Falling code snippets on a canvas, kept at 8-15% opacity so text stays readable. */
 export default function CodeBackground() {
@@ -39,7 +39,7 @@ export default function CodeBackground() {
       y: randomY ? Math.random() * height : -20 - Math.random() * 200,
       speed: 10 + Math.random() * 22, // px per second
       size: 11 + Math.floor(Math.random() * 3),
-      alpha: 0.08 + Math.random() * 0.120,
+      alpha: 0.08 + Math.random() * 0.20,
       color: COLORS[Math.floor(Math.random() * COLORS.length)],
     });
 
@@ -99,10 +99,17 @@ export default function CodeBackground() {
 
   return (
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      {/* soft gradient blobs */}
-      <div className="absolute -left-40 -top-40 h-[480px] w-[480px] rounded-full bg-accent-primary/[0.07] blur-3xl" />
-      <div className="absolute -right-40 top-1/3 h-[520px] w-[520px] rounded-full bg-accent-secondary/[0.07] blur-3xl" />
-      <div className="absolute bottom-0 left-1/3 h-[380px] w-[380px] rounded-full bg-accent-tertiary/[0.04] blur-3xl" />
+      {/* black-to-navy backdrop with two soft navy pools of light */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: [
+            'radial-gradient(1100px 650px at 85% -10%, rgba(29, 55, 112, 0.30), transparent 62%)',
+            'radial-gradient(900px 600px at -10% 105%, rgba(20, 38, 82, 0.32), transparent 60%)',
+            'linear-gradient(180deg, #03050A 0%, #060B18 55%, #0A1328 100%)',
+          ].join(', '),
+        }}
+      />
       <canvas ref={canvasRef} className="absolute inset-0" />
     </div>
   );

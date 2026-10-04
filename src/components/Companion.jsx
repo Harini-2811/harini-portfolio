@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
-import Avatar from './Avatar.jsx';
 import { SECTIONS, useSite } from '../context/SiteContext.jsx';
 import profile from '../data/profile.json';
 
 const label = (id) => id.charAt(0).toUpperCase() + id.slice(1);
 
-/** Mini avatar that follows the visitor after the hero and speaks per section / guides the tour. */
+/** Mini portrait that follows the visitor after the hero and speaks per section / guides the tour. */
 export default function Companion() {
   const { active, tour, nextStop, endTour } = useSite();
   const [open, setOpen] = useState(false);
@@ -38,16 +37,16 @@ export default function Companion() {
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
-            className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full bg-gradient-to-b from-[#4A2F7A] to-ink-800 ring-2 ring-accent-primary/50 shadow-[0_8px_30px_-6px_rgba(168,85,247,0.55)] transition hover:scale-105"
+            className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-ink-900 ring-2 ring-accent-primary/60 ring-offset-2 ring-offset-ink-950 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.8)] transition hover:scale-105 sm:h-16 sm:w-16"
             aria-label={open || touring ? 'Hide Harini’s message' : 'Show Harini’s message'}
           >
-            <Avatar viewBox="78 52 244 250" mood={touring ? 'happy' : 'idle'} className="h-full w-full" title="" />
+            <img src="/images/harini.webp" alt="" width="128" height="128" decoding="async" className="h-full w-full scale-[1.35] object-cover object-[50%_42%]" />
           </button>
 
           <AnimatePresence>
             {(open || touring) && (
               <motion.div
-                className="glass relative mb-3 w-[min(290px,calc(100vw-110px))] rounded-2xl rounded-bl-sm p-3.5 text-sm text-slate-100 shadow-xl"
+                className="relative mb-3 w-[min(290px,calc(100vw-110px))] rounded-2xl rounded-bl-sm border border-ink-600 bg-ink-800 p-3.5 text-sm leading-relaxed text-slate-100 shadow-[0_12px_32px_-12px_rgba(0,0,0,0.9)]"
                 initial={{ opacity: 0, x: -10, scale: 0.9 }}
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: -10, scale: 0.9 }}
@@ -61,10 +60,10 @@ export default function Companion() {
                 {touring && (
                   <div className="mt-3 flex items-center justify-between gap-2">
                     <span className="font-mono text-xs text-slate-400">
-                      {label(SECTIONS[tour])} · {tour}/{SECTIONS.length - 1}
+                      {label(SECTIONS[tour])}, {tour} of {SECTIONS.length - 1}
                     </span>
                     <div className="flex gap-1.5">
-                      <button type="button" onClick={endTour} className="rounded-lg px-2 py-1 text-xs text-slate-400 hover:text-white">
+                      <button type="button" onClick={endTour} className="rounded-lg px-2 py-1 text-xs text-slate-300 hover:text-white">
                         End tour
                       </button>
                       <button
@@ -82,8 +81,8 @@ export default function Companion() {
                   <button
                     type="button"
                     onClick={() => setDismissed(true)}
-                    className="absolute -right-2 -top-2 grid h-6 w-6 place-items-center rounded-full border border-white/10 bg-ink-800 text-slate-400 hover:text-white"
-                    aria-label="Hide the mini avatar"
+                    className="absolute -right-2 -top-2 grid h-6 w-6 place-items-center rounded-full border border-ink-600 bg-ink-900 text-slate-300 hover:text-white"
+                    aria-label="Hide the mini guide"
                   >
                     <X className="h-3.5 w-3.5" />
                   </button>

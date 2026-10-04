@@ -9,14 +9,13 @@ export default function SectionHeading({ title, subtitle, align = 'left' }) {
         {title}
         <motion.span
           aria-hidden="true"
-          className="mt-3 block h-1 w-full origin-left rounded-full bg-gradient-to-r from-accent-primary to-accent-tertiary"
-          initial={{ scaleX: 0 }}
+className="mt-3 block h-[3px] w-full origin-left rounded-full bg-accent-primary"          initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         />
       </h2>
-      {subtitle && <p className="mt-4 leading-relaxed text-slate-400">{subtitle}</p>}
+      {subtitle && <p className="mt-4 leading-relaxed text-slate-300">{subtitle}</p>}
     </Reveal>
   );
 }

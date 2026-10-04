@@ -22,7 +22,7 @@ export default function Languages() {
               className="glass card-hover rounded-2xl p-6"
             >
               <div className="flex items-center gap-4">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent-primary/15 text-accent-secondary ring-1 ring-accent-primary/30">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl border border-ink-600 bg-ink-800 text-accent-primary">
                   <LanguagesIcon className="h-6 w-6" aria-hidden="true" />
                 </span>
                 <div>
@@ -35,7 +35,7 @@ export default function Languages() {
                   <motion.span
                     key={n}
                     className={`h-1.5 flex-1 origin-left rounded-full ${
-                      n < lang.score ? 'bg-gradient-to-r from-accent-primary to-accent-tertiary' : 'bg-white/10'
+                      n < lang.score ? 'bg-accent-primary' : 'bg-ink-600'
                     }`}
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}

@@ -92,9 +92,9 @@ export default function Contact() {
                     href={s.url}
                     target={s.id === 'email' ? undefined : '_blank'}
                     rel="noreferrer"
-                    className="glass group flex items-center gap-4 rounded-2xl p-4 transition hover:border-accent-primary/30"
+                    className="glass group flex items-center gap-4 rounded-2xl p-4 transition hover:border-accent-primary/50"
                   >
-                    <span className="grid h-11 w-11 place-items-center rounded-xl bg-accent-primary/10 text-accent-primary transition group-hover:scale-110">
+                    <span className="grid h-11 w-11 place-items-center rounded-xl border border-ink-600 bg-ink-800 text-accent-primary transition group-hover:scale-110">
                       <BrandIcon id={s.id} />
                     </span>
                     <span className="min-w-0">

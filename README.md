@@ -33,11 +33,11 @@ harini-portfolio/
 │       └── projects/              put project screenshots here
 ├── src/
 │   ├── components/                Navbar, Footer, Loader, CodeBackground, CursorGlow,
-│   │                              Avatar, Companion, SectionHeading, ProofViewer, ...
+│   │                              Companion, SectionHeading, ProofViewer, ...
 │   ├── sections/                  Home, About, Achievements, Experience, Clubs, Skills,
 │   │                              Projects, Certificates, Languages, Links, Contact
 │   ├── data/                      ALL text content lives here (JSON)
-│   ├── context/SiteContext.jsx    active section, avatar mood, guided tour
+│   ├── context/SiteContext.jsx    active section, guide messages, guided tour
 │   ├── hooks/                     useScrollSpy, useTyping
 │   ├── App.jsx  main.jsx  index.css
 ├── tailwind.config.js  vite.config.js  package.json
@@ -47,7 +47,7 @@ harini-portfolio/
 
 | File | What it controls |
 | --- | --- |
-| `src/data/profile.json` | Name, typing roles, quote, About text, stats, contact statement, avatar speech bubbles |
+| `src/data/profile.json` | Name, typing roles, quote, About text, stats, contact statement, mini-guide messages |
 | `src/data/achievements.json` | Achievement cards and their proof images |
 | `src/data/experience.json` | Timeline entries and dates |
 | `src/data/clubs.json` | Club cards (`"active": true` shows the green badge) |

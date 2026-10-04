@@ -21,7 +21,7 @@ const TECH = {
 const SOFT = { Teamwork: Users, Communication: MessageCircle, 'Problem-Solving': Puzzle, Presentation };
 
 function SkillGlyph({ name }) {
-  const base = 'grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white/[0.05] font-mono text-[11px] font-bold';
+  const base = 'grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-ink-800 font-mono text-[11px] font-bold';
   if (name === 'GitHub') {
     return (
       <span className={`${base} text-white`}>
@@ -37,7 +37,7 @@ function SkillGlyph({ name }) {
       </span>
     );
   }
-  const t = TECH[name] ?? { glyph: name[0], color: '#A855F7' };
+  const t = TECH[name] ?? { glyph: name[0], color: '#7FA6F0' };
   return (
     <span className={base} style={{ color: t.color }} aria-hidden="true">
       {t.glyph}
@@ -50,10 +50,10 @@ const ORBIT = ['Java', 'Python', 'JavaScript', 'C++', 'C'];
 function Orbit() {
   return (
     <div aria-hidden="true" className="relative mx-auto mb-12 mr-6 hidden h-48 w-48 lg:block">
-      <div className="absolute inset-0 rounded-full border border-dashed border-white/10" />
-      <div className="absolute inset-8 rounded-full border border-white/[0.05]" />
+      <div className="absolute inset-0 rounded-full border border-dashed border-ink-600" />
+      <div className="absolute inset-8 rounded-full border border-ink-700" />
       <div className="absolute inset-0 grid place-items-center">
-        <span className="grid h-16 w-16 place-items-center rounded-2xl bg-gradient-to-br from-accent-primary/25 to-accent-secondary/25 font-mono text-lg font-bold text-white ring-1 ring-white/10">
+        <span className="grid h-16 w-16 place-items-center rounded-2xl border border-ink-600 bg-ink-800 font-mono text-lg font-bold text-white ring-1 ring-ink-600">
           {'{ }'}
         </span>
       </div>
@@ -66,7 +66,7 @@ function Orbit() {
               className="absolute"
               style={{ left: `${50 + 50 * Math.cos(angle)}%`, top: `${50 + 50 * Math.sin(angle)}%`, transform: 'translate(-50%,-50%)' }}
             >
-              <div className="animate-orbit-rev rounded-lg bg-ink-900 ring-1 ring-white/10">
+              <div className="animate-orbit-rev rounded-lg bg-ink-900 ring-1 ring-ink-600">
                 <SkillGlyph name={name} />
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function Skills() {
               className="glass card-hover rounded-2xl p-6"
             >
               <h3 className="flex items-center gap-3 text-base font-semibold">
-                <span className="grid h-9 w-9 place-items-center rounded-lg bg-accent-primary/10 text-accent-primary">
+                <span className="grid h-9 w-9 place-items-center rounded-lg border border-ink-600 bg-ink-800 text-accent-primary">
                   <Icon name={group.icon} className="h-[18px] w-[18px]" />
                 </span>
                 {group.category}
@@ -106,7 +106,7 @@ export default function Skills() {
                 {group.skills.map((name) => (
                   <li
                     key={name}
-                    className="flex items-center gap-2 rounded-xl border border-white/[0.07] bg-ink-950/50 py-1 pl-1 pr-3 text-sm text-slate-200 transition hover:border-accent-primary/40 hover:shadow-[0_0_18px_-4px_rgba(168,85,247,0.5)]"
+                    className="flex items-center gap-2 rounded-xl border border-ink-700 bg-ink-950/70 py-1 pl-1 pr-3 text-sm text-slate-200 transition hover:border-accent-primary/40 "
                   >
                     <SkillGlyph name={name} />
                     {name}

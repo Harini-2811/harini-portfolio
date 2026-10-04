@@ -29,7 +29,7 @@ export default function ProofViewer({ title, items, onClose }) {
   const item = items[i];
   return createPortal(
     <motion.div className="fixed inset-0 z-[60] grid place-items-center p-4 sm:p-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-      <div className="absolute inset-0 bg-ink-950/90 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-ink-950/95 backdrop-blur-sm" onClick={onClose} />
       <motion.figure
         role="dialog"
         aria-modal="true"
@@ -47,7 +47,7 @@ export default function ProofViewer({ title, items, onClose }) {
             type="button"
             onClick={onClose}
             aria-label="Close proof"
-            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-white/10 bg-ink-900 text-slate-200 hover:text-white"
+            className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-ink-600 bg-ink-900 text-slate-200 hover:text-white"
           >
             <X className="h-5 w-5" />
           </button>
@@ -60,14 +60,14 @@ export default function ProofViewer({ title, items, onClose }) {
             alt={item.caption}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mx-auto max-h-[72vh] w-auto rounded-2xl border border-white/10 object-contain shadow-2xl"
+            className="mx-auto max-h-[72vh] w-auto rounded-2xl border border-ink-600 object-contain shadow-2xl"
           />
           {many && (
             <>
-              <button type="button" onClick={() => go(-1)} aria-label="Previous proof" className="absolute left-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-ink-950/80 text-white ring-1 ring-white/10">
+              <button type="button" onClick={() => go(-1)} aria-label="Previous proof" className="absolute left-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-ink-950/80 text-white ring-1 ring-ink-600">
                 <ChevronLeft className="h-5 w-5" />
               </button>
-              <button type="button" onClick={() => go(1)} aria-label="Next proof" className="absolute right-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-ink-950/80 text-white ring-1 ring-white/10">
+              <button type="button" onClick={() => go(1)} aria-label="Next proof" className="absolute right-2 top-1/2 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-ink-950/80 text-white ring-1 ring-ink-600">
                 <ChevronRight className="h-5 w-5" />
               </button>
             </>
@@ -76,7 +76,7 @@ export default function ProofViewer({ title, items, onClose }) {
 
         <figcaption className="mt-3 text-center text-sm text-slate-400">
           {item.caption}
-          {many && <span className="ml-2 font-mono text-xs text-slate-500">{i + 1}/{items.length}</span>}
+          {many && <span className="ml-2 font-mono text-xs text-slate-400">{i + 1}/{items.length}</span>}
         </figcaption>
       </motion.figure>
     </motion.div>,

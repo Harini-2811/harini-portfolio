@@ -34,12 +34,12 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
       <motion.div
         aria-hidden="true"
-        className="absolute left-0 top-0 h-[2px] w-full origin-left bg-gradient-to-r from-accent-primary via-accent-secondary to-accent-tertiary"
+        className="absolute left-0 top-0 h-[2px] w-full origin-left bg-accent-primary"
         style={{ scaleX: progress }}
       />
       <nav
         aria-label="Main"
-        className={`transition-all duration-300 ${scrolled ? 'border-b border-white/[0.06] bg-ink-950/70 backdrop-blur-xl' : 'bg-transparent'}`}
+        className={`transition-all duration-300 ${scrolled ? 'border-b border-ink-700 bg-ink-950/85 backdrop-blur-xl' : 'bg-transparent'}`}
       >
         <div className="container-page flex h-16 items-center justify-between">
           <a href="#home" className="font-mono text-lg font-semibold text-white" aria-label="Harini V, back to top">
@@ -53,13 +53,13 @@ export default function Navbar() {
                   href={`#${id}`}
                   aria-current={active === id ? 'true' : undefined}
                   className={`relative rounded-lg px-2.5 py-2 text-sm transition-colors ${
-                    active === id ? 'text-white' : 'text-slate-400 hover:text-white'
+                    active === id ? 'text-white' : 'text-slate-300 hover:text-white'
                   }`}
                 >
                   {active === id && (
                     <motion.span
                       layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-lg bg-white/[0.06] ring-1 ring-accent-primary/25"
+                      className="absolute inset-0 -z-10 rounded-lg bg-ink-800 ring-1 ring-accent-primary/30"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -71,7 +71,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 text-slate-200 xl:hidden"
+            className="grid h-10 w-10 place-items-center rounded-lg border border-ink-600 text-slate-200 xl:hidden"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
@@ -92,7 +92,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
             />
             <motion.aside
-              className="fixed inset-y-0 right-0 z-50 flex w-72 max-w-[85vw] flex-col border-l border-white/10 bg-ink-900 p-6 xl:hidden"
+              className="fixed inset-y-0 right-0 z-50 flex w-72 max-w-[85vw] flex-col border-l border-ink-600 bg-ink-900 p-6 xl:hidden"
               style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 1.5rem)' }}
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
@@ -102,7 +102,7 @@ export default function Navbar() {
             >
               <button
                 type="button"
-                className="mb-6 grid h-10 w-10 place-items-center self-end rounded-lg border border-white/10 text-slate-200"
+                className="mb-6 grid h-10 w-10 place-items-center self-end rounded-lg border border-ink-600 text-slate-200"
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
                 autoFocus
@@ -116,7 +116,7 @@ export default function Navbar() {
                       href={`#${id}`}
                       onClick={() => setOpen(false)}
                       className={`block rounded-lg px-3 py-3 text-base ${
-                        active === id ? 'bg-white/[0.06] text-white' : 'text-slate-400 hover:text-white'
+                        active === id ? 'bg-ink-800 text-white' : 'text-slate-400 hover:text-white'
                       }`}
                     >
                       <span className="mr-3 font-mono text-xs text-accent-primary/70">{String(i + 1).padStart(2, '0')}</span>

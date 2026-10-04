@@ -1,7 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Download, Send, Sparkles } from 'lucide-react';
-import Avatar from '../components/Avatar.jsx';
 import { BrandIcon } from '../components/Icons.jsx';
 import useTyping from '../hooks/useTyping.js';
 import { scrollToSection, useSite } from '../context/SiteContext.jsx';
@@ -15,98 +13,31 @@ const item = (delay) => ({
   transition: { duration: 0.7, delay, ease },
 });
 
-function AvatarStage() {
-  const { message, hover, setHover, waveKey, wave, ready, startTour, tour } = useSite();
-  const reduce = useReducedMotion();
-  const [waving, setWaving] = useState(false);
-  const [petted, setPetted] = useState(false);
-  const stageRef = useRef(null);
-
-  // 3D tilt following the pointer
-  const rx = useMotionValue(0);
-  const ry = useMotionValue(0);
-  const srx = useSpring(rx, { stiffness: 120, damping: 14 });
-  const sry = useSpring(ry, { stiffness: 120, damping: 14 });
-
-  useEffect(() => {
-    if (!ready) return;
-    setWaving(true);
-    const t = setTimeout(() => setWaving(false), 3300);
-    return () => clearTimeout(t);
-  }, [ready, waveKey]);
-
-  const onPointerMove = (e) => {
-    if (reduce || e.pointerType !== 'mouse') return;
-    const r = stageRef.current.getBoundingClientRect();
-    ry.set(((e.clientX - r.left) / r.width - 0.5) * 14);
-    rx.set(-((e.clientY - r.top) / r.height - 0.5) * 10);
-  };
-  const onPointerLeave = () => {
-    rx.set(0);
-    ry.set(0);
-  };
-  const pet = () => {
-    wave();
-    setPetted(true);
-    setHover('avatar');
-    setTimeout(() => {
-      setPetted(false);
-      setHover(null);
-    }, 2200);
-  };
-
-  const happy = petted || Boolean(hover);
-
+function Portrait() {
+  const { startTour } = useSite();
   return (
-    <div className="relative mx-auto w-full max-w-[290px] sm:max-w-[380px] lg:max-w-[400px]" style={{ perspective: 1000 }}>
-      {/* speech bubble */}
-      <div className="absolute -top-2 left-0 z-20 sm:-left-4">
-        <AnimatePresence mode="wait">
-          {ready && (
-            <motion.div
-              key={message}
-              initial={{ opacity: 0, y: 8, scale: 0.92 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -6, scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 360, damping: 26 }}
-              className="glass relative max-w-[230px] rounded-2xl rounded-bl-sm px-4 py-3 text-sm leading-snug text-slate-100 shadow-[0_10px_40px_-12px_rgba(168,85,247,0.45)]"
-            >
-              {message}
-              <span className="absolute -bottom-2 left-4 h-4 w-4 rotate-45 border-b border-r border-white/[0.07] bg-ink-900/70" />
-            </motion.div>
-          )}
-        </AnimatePresence>
+    <div className="relative mx-auto w-full max-w-[260px] sm:max-w-[340px] lg:max-w-[380px]">
+      <div className="relative aspect-square">
+        {/* slow dashed orbit: the one moving element around the photo */}
+        <div aria-hidden="true" className="pointer-events-none absolute -inset-4 animate-ring rounded-full border border-dashed border-accent-primary/45 sm:-inset-5" />
+        <div aria-hidden="true" className="pointer-events-none absolute -inset-[3px] rounded-full border border-ink-600" />
+        <img
+          src="/images/harini.webp"
+          alt="Portrait of Harini V wearing her Easwari Engineering College lanyard"
+          width="640"
+          height="640"
+          fetchpriority="high"
+          decoding="async"
+          className="relative h-full w-full rounded-full bg-ink-900 object-cover"
+        />
       </div>
-
-      {/* glowing rotating ring */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-[6%] bottom-[2%] top-[17%] rounded-full">
-        <div className="absolute inset-0 animate-ring rounded-full border-2 border-dashed border-accent-primary/25" />
-        <div className="absolute -inset-6 rounded-full bg-accent-primary/10 blur-3xl" />
-      </div>
-
-      <motion.button
-        ref={stageRef}
-        type="button"
-        onClick={pet}
-        onPointerMove={onPointerMove}
-        onPointerLeave={onPointerLeave}
-        onMouseEnter={() => setHover('avatar')}
-        onMouseLeave={() => !petted && setHover(null)}
-        aria-label="Say hi to Harini's avatar"
-        className="relative block w-full cursor-pointer rounded-full"
-        style={{ rotateX: srx, rotateY: sry, transformStyle: 'preserve-3d' }}
-        animate={reduce ? undefined : { y: [0, -10, 0] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-      >
-        <Avatar portal waving={waving} mood={happy ? 'happy' : 'idle'} className="h-auto w-full" />
-      </motion.button>
 
       {/* guided tour prompt */}
-      <motion.div {...item(1.1)} className="mt-4 flex justify-center">
+      <motion.div {...item(1.1)} className="mt-9 flex justify-center">
         <button
           type="button"
           onClick={startTour}
-          className="chip gap-2 px-4 py-2 text-sm text-slate-200 transition hover:border-accent-primary/40 hover:text-white"
+          className="chip gap-2 px-4 py-2 text-sm text-slate-200 transition hover:border-accent-primary/50 hover:text-white"
         >
           <Sparkles className="h-4 w-4 text-accent-primary" />
           Show me around
@@ -135,7 +66,7 @@ export default function Home() {
           {/* text column */}
           <div className="order-2 lg:order-1">
             <motion.h1 {...item(0.15)} className="text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-              Hi, I'm <span className="gradient-text">{profile.name}</span>
+              Hi, I'm {profile.name}
             </motion.h1>
             <motion.p
               {...item(0.35)}
@@ -147,13 +78,13 @@ export default function Home() {
                 <span className="ml-0.5 inline-block h-5 w-[2px] translate-y-1 animate-caret bg-accent-primary" />
               </span>
             </motion.p>
-            <motion.p {...item(0.45)} className="mt-4 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
+            <motion.p {...item(0.45)} className="mt-4 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
               {profile.subtext}
             </motion.p>
 
             <motion.figure
               {...item(0.6)}
-              className="mt-8 max-w-xl rounded-2xl border-l-2 border-accent-secondary/70 bg-white/[0.03] px-5 py-4"
+              className="mt-8 max-w-xl rounded-r-2xl border-l-2 border-accent-primary bg-ink-900/80 px-5 py-4"
             >
               <blockquote className="font-display text-base leading-relaxed text-slate-200 sm:text-lg">
                 “{profile.quote}”
@@ -180,7 +111,7 @@ export default function Home() {
                     target={s.id === 'email' ? undefined : '_blank'}
                     rel="noreferrer"
                     aria-label={s.label}
-                    className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-slate-300 transition hover:-translate-y-0.5 hover:border-accent-primary/40 hover:text-accent-primary"
+                    className="grid h-11 w-11 place-items-center rounded-xl border border-ink-600 bg-ink-900 text-slate-300 transition hover:-translate-y-0.5 hover:border-accent-primary/60 hover:text-accent-primary"
                     {...hoverProps(s.id)}
                   >
                     <BrandIcon id={s.id} />
@@ -190,14 +121,14 @@ export default function Home() {
             </motion.ul>
           </div>
 
-          {/* avatar column: above the text on mobile */}
+          {/* photo column: above the text on mobile */}
           <motion.div
             className="order-1 lg:order-2"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.15, ease }}
           >
-            <AvatarStage />
+            <Portrait />
           </motion.div>
         </div>
 

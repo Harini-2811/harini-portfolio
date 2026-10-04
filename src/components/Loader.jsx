@@ -14,7 +14,7 @@ export default function Loader() {
           <span className="text-accent-primary">&gt;</span> initialising portfolio...
         </motion.p>
         <motion.div
-          className="mt-4 h-[2px] w-56 origin-left rounded bg-gradient-to-r from-accent-primary to-accent-secondary"
+          className="mt-4 h-[2px] w-56 origin-left rounded bg-accent-primary"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.95, ease: [0.65, 0, 0.35, 1] }}

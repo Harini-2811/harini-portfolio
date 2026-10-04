@@ -41,13 +41,8 @@ function AchievementCard({ a, index, onProof }) {
         onPointerMove={onMove}
         onPointerLeave={reset}
         style={{ rotateX: srx, rotateY: sry, '--glow': c.glow }}
-        className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-shadow duration-300 hover:shadow-[0_20px_50px_-20px_var(--glow)]"
+        className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-shadow duration-300 hover:border-accent-primary/40 hover:shadow-[0_20px_50px_-24px_var(--glow)]"
       >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-          style={{ background: c.glow }}
-        />
         <div className="flex items-start justify-between gap-4">
           <span className={`grid h-12 w-12 place-items-center rounded-xl ring-1 ${c.bg} ${c.ring} ${c.text}`}>
             <Icon name={a.icon} className="h-6 w-6" />

@@ -5,7 +5,13 @@
     "org": "GirlScript Summer of Code 2026 (GSSoC'26)",
     "description": "Contributed to full stack projects and achieved a top 2% finish.",
     "start": "May 2026",
-    "end": "July 2026"
+    "end": "July 2026",
+    "certificate": {
+      "label": "Certificate of Participation",
+      "issuer": "GirlScript Foundation",
+      "src": "/images/certificates/gssoc-2026-participation.webp",
+      "caption": "GirlScript Summer of Code 2026, certificate of participation"
+    }
   },
   {
     "id": "1m1b",
@@ -13,6 +19,12 @@
     "org": "1M1B - AI for Sustainability",
     "description": "Built an AI-based water demand forecasting system that uses machine learning to predict water demand in advance.",
     "start": "Jan 2026",
-    "end": "Apr 2026"
+    "end": "Apr 2026",
+    "certificate": {
+      "label": "Certificate of Completion",
+      "issuer": "1M1B Green Skills Academy with AICTE, supported by Salesforce",
+      "src": "/images/certificates/1m1b-green-internship.webp",
+      "caption": "1M1B Green Internship, certificate of completion (AICTE, supported by Salesforce)"
+    }
   }
 ]

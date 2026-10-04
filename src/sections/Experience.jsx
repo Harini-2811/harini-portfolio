@@ -1,7 +1,8 @@
-import { useRef } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
-import { Calendar } from 'lucide-react';
+import { useCallback, useRef, useState } from 'react';
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
+import { Calendar, FileCheck2 } from 'lucide-react';
 import SectionHeading from '../components/SectionHeading.jsx';
+import ProofViewer from '../components/ProofViewer.jsx';
 import experience from '../data/experience.json';
 
 function DateChip({ item, className = '' }) {
@@ -13,7 +14,32 @@ function DateChip({ item, className = '' }) {
   );
 }
 
+function CertificateLink({ cert, onOpen }) {
+  return (
+    <button
+      type="button"
+      onClick={onOpen}
+      className="group/cert mt-5 flex w-full items-center gap-4 rounded-xl border border-ink-600 bg-ink-950/70 p-2.5 pr-4 text-left transition hover:border-accent-primary/60"
+      aria-label={`View ${cert.label}`}
+    >
+      <span className="relative h-12 w-16 shrink-0 overflow-hidden rounded-lg border border-ink-700 bg-white sm:h-16 sm:w-24">
+        <img src={cert.src} alt="" loading="lazy" decoding="async" className="h-full w-full object-cover transition duration-500 group-hover/cert:scale-105" />
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex items-start gap-1.5 text-sm font-semibold leading-snug text-white">
+          <FileCheck2 className="mt-px h-4 w-4 shrink-0 text-accent-primary" aria-hidden="true" />
+          {cert.label}
+        </span>
+        <span className="mt-0.5 block text-xs leading-snug text-slate-400">{cert.issuer}</span>
+      </span>
+      <span className="hidden shrink-0 text-sm font-medium text-accent-primary group-hover/cert:underline sm:inline">View</span>
+    </button>
+  );
+}
+
 export default function Experience() {
+  const [open, setOpen] = useState(null);
+  const close = useCallback(() => setOpen(null), []);
   const listRef = useRef(null);
   const { scrollYProgress } = useScroll({ target: listRef, offset: ['start 80%', 'end 55%'] });
   const line = useSpring(scrollYProgress, { stiffness: 90, damping: 22 });
@@ -25,16 +51,16 @@ export default function Experience() {
 
         <div ref={listRef} className="relative mx-auto max-w-4xl">
           {/* track + self-drawing line: left on mobile, centre on desktop */}
-          <div aria-hidden="true" className="absolute bottom-0 left-[11px] top-0 w-[2px] bg-white/[0.06] md:left-1/2 md:-translate-x-1/2" />
+          <div aria-hidden="true" className="absolute bottom-0 left-[11px] top-0 w-[2px] bg-ink-700 md:left-1/2 md:-translate-x-1/2" />
           <motion.div
             aria-hidden="true"
-            className="absolute bottom-0 left-[11px] top-0 w-[2px] origin-top bg-gradient-to-b from-accent-primary via-accent-secondary to-accent-tertiary md:left-1/2 md:-translate-x-1/2"
+            className="absolute bottom-0 left-[11px] top-0 w-[2px] origin-top bg-accent-primary md:left-1/2 md:-translate-x-1/2"
             style={{ scaleY: line }}
           />
 
           <ol className="space-y-12">
             {experience.map((item, i) => (
-              <li key={item.id} className="relative grid grid-cols-[24px_1fr] gap-5 md:grid-cols-[1fr_48px_1fr] md:gap-0">
+              <li key={item.id} className="relative grid grid-cols-[24px_minmax(0,1fr)] gap-5 md:grid-cols-[minmax(0,1fr)_48px_minmax(0,1fr)] md:gap-0">
                 {/* card (left column on desktop) */}
                 <motion.article
                   initial={{ opacity: 0, x: -30 }}
@@ -49,7 +75,8 @@ export default function Experience() {
                   </div>
                   <h3 className="text-lg font-semibold sm:text-xl">{item.role}</h3>
                   <p className="mt-1 text-sm font-medium text-accent-secondary">{item.org}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-400 sm:text-base">{item.description}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">{item.description}</p>
+                  {item.certificate && <CertificateLink cert={item.certificate} onOpen={() => setOpen(item)} />}
                 </motion.article>
 
                 {/* dot on the line */}
@@ -76,13 +103,23 @@ export default function Experience() {
                   transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                   className="hidden pt-7 md:col-start-3 md:row-start-1 md:ml-6 md:block"
                 >
-                  <DateChip item={item} className="rounded-full border border-accent-primary/20 bg-accent-primary/[0.06] px-3 py-1.5" />
+                  <DateChip item={item} className="rounded-full border border-ink-600 bg-ink-900 px-3 py-1.5" />
                 </motion.div>
               </li>
             ))}
           </ol>
         </div>
       </div>
+
+      <AnimatePresence>
+        {open && (
+          <ProofViewer
+            title={`${open.org}: ${open.certificate.label}`}
+            items={[{ type: 'image', src: open.certificate.src, caption: open.certificate.caption }]}
+            onClose={close}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

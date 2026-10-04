@@ -4,17 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Black + deep navy. Flat colours only: no gradients anywhere.
         ink: {
-          950: '#07040E', // page background: near-black with a purple tint
-          900: '#120B22', // cards
-          800: '#1B1132',
-          700: '#2A1A4A',
-          600: '#3B2763',
+          950: '#04060B', // page background: true black with a hint of navy
+          900: '#0A1222', // cards / surfaces: deep navy
+          800: '#0F1A30', // raised surfaces, inputs, menus
+          700: '#16243F', // hairlines on navy
+          600: '#22355A', // strong borders, inactive bars
         },
         accent: {
-          primary: '#A855F7', // purple
-          secondary: '#C084FC', // light purple
-          tertiary: '#E879F9', // orchid / fuchsia, used sparingly
+          primary: '#7FA6F0', // steel blue: links, buttons, active states
+          secondary: '#A9C3F2', // pale blue: secondary labels (readable on navy)
+          tertiary: '#6E93DA', // muted blue: rare tertiary marks
         },
       },
       fontFamily: {

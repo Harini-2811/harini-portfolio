@@ -29,7 +29,7 @@ export default function Links() {
                 onMouseLeave={() => setHover(null)}
                 className="glass card-hover group flex h-full items-start gap-5 rounded-2xl p-6"
               >
-                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent-primary/25 to-accent-tertiary/20 text-white ring-1 ring-accent-primary/30 transition group-hover:scale-110">
+                <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-ink-600 bg-ink-800 text-white transition group-hover:scale-110">
                   <BrandIcon id={l.id} className="h-7 w-7" />
                 </span>
                 <span className="min-w-0 flex-1">
