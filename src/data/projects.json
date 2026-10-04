@@ -1,0 +1,57 @@
+[
+  {
+    "id": "formwork-json-studio",
+    "title": "Formwork JSON Studio",
+    "category": "Web",
+    "summary": "A client-side JSON formatter, validator, anonymiser and mock-data generator. Nothing leaves your browser.",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PrismJS"
+    ],
+    "thumbnail": "",
+    "github": "https://github.com/Harini-2811/Formwork-Json-Studio",
+    "live": "https://formwork-json-studio.vercel.app/",
+    "caseStudy": {
+      "problem": "Developers often paste sensitive JSON into online tools just to format or check it. Formwork does all of it locally, so no data ever leaves the browser.",
+      "role": "Designed and built the whole app, from blueprint and interface sketch to deployment.",
+      "approach": [
+        "Format, validate and auto-fix JSON, with plain-English error explanations instead of cryptic messages",
+        "Anonymise names, emails and phone numbers recursively across the JSON",
+        "Generate 100 mock entries matching the input's shape, downloadable as a file",
+        "Live analytics (size, depth, arrays, key/value pairs), PrismJS syntax highlighting and three themes",
+        "Built in vanilla HTML, CSS and JavaScript with no frameworks"
+      ],
+      "outcome": "A fast, privacy-first JSON toolkit deployed on Vercel.",
+      "screenshots": []
+    }
+  },
+  {
+    "id": "water-demand-forecasting",
+    "title": "Aqua AI: Water Demand Forecasting",
+    "category": "AI/ML",
+    "summary": "An AI-powered dashboard that predicts and analyses water demand, with next-day forecasts, alerts and recommendations.",
+    "tech": [
+      "Python",
+      "Streamlit",
+      "Pandas",
+      "Plotly"
+    ],
+    "thumbnail": "",
+    "github": "https://github.com/Harini-2811/water-demand-forecasting",
+    "live": "https://water-demand-forecastinggit-zmehfja8vshaqcmsqvurtx.streamlit.app/",
+    "caseStudy": {
+      "problem": "Water use was planned reactively. Forecasting demand in advance makes proactive resource planning possible.",
+      "role": "Built during the 1M1B AI for Sustainability internship.",
+      "approach": [
+        "End-to-end ML pipeline: preprocess, train, predict, recommend",
+        "Next-day water demand prediction from historical consumption data",
+        "Interactive Streamlit dashboard with Plotly demand-trend charts",
+        "Alerts and recommendations generated from the predictions"
+      ],
+      "outcome": "A live dashboard that turns consumption data into forecasts and actionable recommendations.",
+      "screenshots": []
+    }
+  }
+]

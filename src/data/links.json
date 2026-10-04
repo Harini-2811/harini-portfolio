@@ -1,0 +1,50 @@
+{
+  "email": "harinivettri2811@gmail.com",
+  "resume": "/resume.pdf",
+  "socials": [
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "handle": "harini-vettrivel",
+      "url": "https://www.linkedin.com/in/harini-vettrivel"
+    },
+    {
+      "id": "github",
+      "label": "GitHub",
+      "handle": "Harini-2811",
+      "url": "https://github.com/Harini-2811"
+    },
+    {
+      "id": "leetcode",
+      "label": "LeetCode",
+      "handle": "Harini_Vettrivel",
+      "url": "https://leetcode.com/u/Harini_Vettrivel/"
+    },
+    {
+      "id": "email",
+      "label": "Email",
+      "handle": "harinivettri2811@gmail.com",
+      "url": "mailto:harinivettri2811@gmail.com"
+    }
+  ],
+  "linksSection": [
+    {
+      "id": "github",
+      "label": "GitHub",
+      "handle": "Harini-2811",
+      "url": "https://github.com/Harini-2811",
+      "description": "My repositories, projects and open-source contributions."
+    },
+    {
+      "id": "leetcode",
+      "label": "LeetCode",
+      "handle": "Harini_Vettrivel",
+      "url": "https://leetcode.com/u/Harini_Vettrivel/",
+      "description": "My coding profile: 300+ problems solved and weekly contests."
+    }
+  ],
+  "contactSection": [
+    "email",
+    "linkedin"
+  ]
+}

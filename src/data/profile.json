@@ -1,0 +1,77 @@
+{
+  "name": "Harini V",
+  "college": "Easwari Engineering College",
+  "degree": "B.E. Computer Science and Engineering",
+  "subtext": "2nd Year CSE Student building intelligent, full stack applications.",
+  "roles": [
+    "AI-Integrated Full Stack Builder",
+    "Open Source Contributor",
+    "Hackathon Finalist",
+    "Problem Solver"
+  ],
+  "quote": "You can't add days to your life, but you can add life to your days, and I intend to make every day count.",
+  "about": {
+    "lead": "I turn curiosity into code, and code into impact.",
+    "body": "I'm Harini V, a second-year Computer Science Engineering student with a relentless drive to build AI-integrated full stack applications that solve real problems. From shipping contributions to open-source projects across a 43,000+ participant community, to engineering machine learning systems for sustainability, and competing among the top teams in national hackathons, I learn fastest by building. I pair analytical depth, shown by 300+ solved LeetCode problems and active contest participation, with a collaborative spirit and clear communication. I believe growth is built daily, and my philosophy is simple: make every day count.",
+    "tags": [
+      "AI + Full Stack",
+      "Open Source",
+      "Hackathon Finalist",
+      "Problem Solver"
+    ]
+  },
+  "aboutStats": [
+     {
+      "value": 487,
+      "prefix": "#",
+      "label": "GSSoC 2026 rank, top 2%"
+    },
+    {
+      "value": 2,
+      "suffix": "X",
+      "label": "Hackathon Finalist"
+    },
+    {
+      "value": 300,
+      "suffix": "+",
+      "label": "LeetCode problems solved"
+    },
+    {
+      "value": 9.48,
+      "decimals": 2,
+      "label": "CGPA"
+    }
+  ],
+  "contactStatement": "I'm open to internship and full-time opportunities, as well as collaborations on technical projects. If you're building something meaningful, let's connect.",
+  "avatar": {
+    "sections": {
+      "home": "Hi there! I'm Harini 👋 Welcome! Let me show you around.",
+      "about": "Here's a little about me and what drives me.",
+      "achievements": "A few milestones I'm really proud of! 🏆",
+      "experience": "This is where I've shipped real work.",
+      "clubs": "My club family: F.A.B.R.I.C's Development Team!",
+      "skills": "The tools in my toolkit 🛠️",
+      "projects": "Things I've built. Open a card for the full story!",
+      "certificates": "Courses I've completed to keep levelling up 📜",
+      "languages": "Languages I speak 🗣️",
+      "links": "Find my code and coding profile here 🔗",
+      "contact": "Let's build something meaningful together ✨"
+    },
+    "hovers": {
+      "projects": "Ooh, want to see what I've built? 👀",
+      "resume": "My resume, all on one page! 📄",
+      "contact": "I'd love to hear from you! 💌",
+      "linkedin": "Let's connect on LinkedIn!",
+      "github": "Peek at my code on GitHub 💻",
+      "leetcode": "300+ problems and counting!",
+      "email": "My inbox is always open ✉️",
+      "avatar": "Hehe, that tickles! 😄"
+    }
+  },
+  "education": {
+    "degree": "B.E. Computer Science and Engineering",
+    "college": "Easwari Engineering College",
+    "period": "Sep 2025 – Present",
+    "cgpa": "9.40"
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "nptel-python",
+    "title": "The Joy of Computing using Python",
+    "issuer": "NPTEL · IIT Madras",
+    "date": "Jan–Apr 2026",
+    "highlight": "Elite · 90%",
+    "description": "12-week IIT Madras course on SWAYAM. Earned an Elite certification with a 90% consolidated score among 21,919 certified candidates.",
+    "image": "/images/certificates/nptel-joy-of-computing-python.webp"
+  },
+  {
+    "id": "udemy-java",
+    "title": "60 Days of Java: The Complete Java Masterclass",
+    "issuer": "Udemy",
+    "date": "Jan 31, 2026",
+    "highlight": "58 hours",
+    "description": "A 58-hour hands-on Java course, completed through 60 days of structured daily practice.",
+    "image": "/images/certificates/udemy-java-masterclass.webp"
+  },
+  {
+    "id": "cisco-security",
+    "title": "Security and Connectivity Support",
+    "issuer": "Cisco Networking Academy",
+    "date": "Dec 18, 2025",
+    "highlight": "Verified",
+    "description": "Network troubleshooting, IP addressing, DNS and DHCP, and recognising and responding to common cybersecurity threats.",
+    "image": "/images/certificates/cisco-security-connectivity.webp"
+  }
+]

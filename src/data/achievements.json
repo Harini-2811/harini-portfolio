@@ -1,0 +1,97 @@
+[
+  {
+    "id": "gssoc",
+    "title": "GSSoC 2026",
+    "icon": "rocket",
+    "accent": "primary",
+    "stat": {
+      "value": 487,
+      "prefix": "#"
+    },
+    "text": "Open Source Contributor, Rank 487 (Top 2%) among 43,000+ participants. Actively contributed to full stack projects.",
+    "proof": [
+      {
+        "type": "image",
+        "src": "/images/proofs/gssoc-badge.webp",
+        "caption": "GSSoC 2026 Power Contributor badge"
+      },
+      {
+        "type": "image",
+        "src": "/images/proofs/gssoc-profile.webp",
+        "caption": "GSSoC 2026 profile: global rank #487, top 2%"
+      }
+    ]
+  },
+  {
+    "id": "iste",
+    "title": "ISTE Hackathon 2026",
+    "icon": "medal",
+    "accent": "secondary",
+    "stat": {
+      "value": 15,
+      "prefix": "Top "
+    },
+    "text": "Top 15 Team. Selected among the 15 best teams and chosen for the incubation program.",
+    "proof": [
+      {
+        "type": "image",
+        "src": "/images/proofs/iste-certificate.webp",
+        "caption": "ISTE Hackathon 2026 certificate of achievement and incubation support"
+      }
+    ]
+  },
+  {
+    "id": "codeclash",
+    "title": "Code Clash (Prep2Placements)",
+    "icon": "award",
+    "accent": "tertiary",
+    "stat": {
+      "value": 3,
+      "suffix": "rd"
+    },
+    "text": "3rd Prize. Won third place in a coding and interview competition assessing technical and behavioural skills.",
+    "proof": [
+      {
+        "type": "image",
+        "src": "/images/proofs/code-clash.webp",
+        "caption": "Code Clash (Prep2Placements) prize presentation"
+      }
+    ]
+  },
+  {
+    "id": "cmr",
+    "title": "CMR HackFest 3.0",
+    "icon": "trophy",
+    "accent": "primary",
+    "stat": {
+      "value": 188,
+      "prefix": "Top "
+    },
+    "text": "Finalist, Top 188 of 1,832 teams advanced to the final round.",
+    "proof": [
+      {
+        "type": "image",
+        "src": "/images/proofs/cmr-hackfest.webp",
+        "caption": "CMR HackFest 3.0 certificate"
+      }
+    ]
+  },
+  {
+    "id": "leetcode",
+    "title": "LeetCode",
+    "icon": "code",
+    "accent": "secondary",
+    "stat": {
+      "value": 300,
+      "suffix": "+"
+    },
+    "text": "300+ problems solved with active participation in weekly contests.",
+    "proof": [
+      {
+        "type": "link",
+        "url": "https://leetcode.com/u/Harini_Vettrivel/",
+        "caption": "LeetCode profile"
+      }
+    ]
+  }
+]

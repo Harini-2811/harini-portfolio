@@ -1,0 +1,8 @@
+[
+  { "category": "Programming Languages", "icon": "code", "skills": ["Java", "Python", "JavaScript", "C++", "C"] },
+  { "category": "Frontend", "icon": "layout", "skills": ["HTML", "CSS", "JavaScript", "React"] },
+  { "category": "Backend", "icon": "server", "skills": ["Node.js"] },
+  { "category": "Database", "icon": "database", "skills": ["MySQL"] },
+  { "category": "Version Control", "icon": "git", "skills": ["Git", "GitHub"] },
+  { "category": "Soft Skills", "icon": "users", "skills": ["Teamwork", "Communication", "Problem-Solving", "Presentation"] }
+]
